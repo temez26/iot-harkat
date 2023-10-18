@@ -1,5 +1,5 @@
 /*
-* EI TOIMI VALITTAA KAATUU AINA KUN YRITTÄÄ LASKUTOIMITUKSIA SUORITTAA
+* EI TOIMI VALITTAA KAATUU AINA KUN YRITTï¿½ï¿½ LASKUTOIMITUKSIA SUORITTAA
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -29,7 +29,7 @@ void free_history(struct Command* history, int count) {
 
 #ifdef _WIN32
 #define strdup _strdup
-#define _CRT_SECURE_NO_WARNINGS // Add this at the top of your file
+#define _CRT_SECURE_NO_WARNINGS 
 #define sscanf sscanf_s
 #endif
 
@@ -105,7 +105,7 @@ int main() {
             break;
         case '%':
             if (num2 == 0) {
-                printf("Virhe: Jakojäännos nollalla ei ole sallittu.\n");
+                printf("Virhe: Jakojï¿½ï¿½nnos nollalla ei ole sallittu.\n");
                 continue;
             }
             result = num1 % num2;
@@ -117,7 +117,7 @@ int main() {
 
         printf("%d %c %d = %d\n", num1, operator, num2, result);
 
-        // Save the command to the history
+        
         if (history_count < MAX_HISTORY_SIZE) {
             struct Command* temp = (struct Command*)realloc(history, (history_count + 1) * sizeof(struct Command));
             if (temp == NULL) {
@@ -140,7 +140,7 @@ int main() {
         }
     }
 
-    // Free the memory allocated for the command history
+    
     free_history(history, history_count);
 
     return 0;
